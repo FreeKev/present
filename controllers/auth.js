@@ -119,4 +119,19 @@ router.put('/edit', isLoggedIn, function(req, res){
   });
 });
 
+router.put('/edit-session', isLoggedIn, function(req, res){
+  console.log('this is req.body',req.body);
+  db.user.update( 
+    { sessionid: req.body.sessionid }, 
+    { where: { 
+      id: [1,2,3,4]
+    } 
+  }).then(function(users){
+    console.log('returned users?',users)
+  }).catch(function (err) {
+    console.log('Error occured', err);
+    res.send('fail');
+  });
+});
+
 module.exports = router;

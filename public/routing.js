@@ -21,3 +21,19 @@ $('#edit-form').submit(function(e){
     console.log(err);
   });
 });
+
+
+$('#edit-session').submit(function (e) {
+  console.log('edit session');
+  e.preventDefault();
+  $.ajax({
+    url: $(this).attr('action'),
+    method: 'PUT',
+    data: $(this).serialize()
+  }).success(function (data) {
+    console.log('data',data)
+    window.location.href = '/profile';
+  }).fail(function (err) {
+    console.log(err);
+  });
+});

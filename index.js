@@ -46,11 +46,13 @@ app.get('/profile', isLoggedIn, function(req, res){
 
 app.post('/profile', function(req, res, next){
   db.user.findOrCreate({
-    sessionid: req.body.sessionid
+    where: {
+      sessionid: req.body.sessionid
+    }
   }).spread(function(user, wasCreated){
     if(wasCreated){
       console.log('success');
-      console.log(user.sessionid);
+      console.log('this is user.sessionid',user.sessionid);
       res.redirect('profile');
     }
   }).catch(function(err){
