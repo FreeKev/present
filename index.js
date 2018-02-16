@@ -40,7 +40,7 @@ app.get('/', function(req, res){
 app.get('/profile', isLoggedIn, function(req, res){
   res.render('profile');
   db.user.findAll().then(printU => {
-    console.log(printU.locale);
+    console.log('locale',printU.locale);
   });
 });
 
