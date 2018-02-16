@@ -34,7 +34,7 @@ app.use(function(req, res, next){
 })
 
 app.get('/', function(req, res){
-  res.render('home');
+  res.render('auth/login');
 });
 
 app.get('/profile', isLoggedIn, function(req, res){

@@ -13,7 +13,7 @@ router.get('/login', function(req, res){
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/profile',
   successFlash: 'Login Successful',
-  failureRedirect: '/auth/login',
+  failureRedirect: '/',
   failureFlash: 'Invalid Credentials'
 }));
 
@@ -41,7 +41,7 @@ router.post('/signup', function(req, res, next){
     } else {
       //Bad job, tried sign up when need login
       req.flash('error', 'Email already exists');
-      res.redirect('/auth/login');
+      res.redirect('/');
     }
   }).catch(function(err){
     req.flash('error', err.message);
@@ -59,7 +59,7 @@ router.get('/facebook', passport.authenticate('facebook', {
 router.get('/callback/facebook', passport.authenticate('facebook', {
   successRedirect: '/profile',
   successFlash: "You successfully logged in via Facebook",
-  failureRedirect: '/auth/login',
+  failureRedirect: '/',
   failureFlash: 'You tried to login with Facebook, but he doesn\'t recognize you'
 }));
 
@@ -82,8 +82,6 @@ router.get('/:id', function(req, res){
     res.render('auth/single', { result: user });
   });
 });
-
-//Add Controller for edit/delete?
 
 router.delete('/:id', isLoggedIn, function(req, res){
   console.log('Delete route. Id = ', req.params.id);
