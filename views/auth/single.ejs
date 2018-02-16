@@ -1,0 +1,48 @@
+<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/geolocal.js"></script>
+<script type="text/javascript" src="/routing.js"></script>
+<!-- <style> body { background-color: #31708f; } </style> -->
+<form id="edit-form" action="/auth/edit">
+  <div class="form-group">
+    <label>First Name:</label>
+    <input type="text" name="firstname" class="form-control" value="<%= result.dataValues.firstname %>">
+  </div>
+  <div class="form-group">
+    <label>Last Name:</label>
+    <input type="text" name="lastname" class="form-control" value="<%= result.dataValues.lastname %>">
+  </div>
+  <div class="form-group">
+    <label>UserName:</label>
+    <input type="text" name="username" class="form-control" value="<%= result.dataValues.username %>">
+  </div>
+  <!-- <div class="form-group">
+    <label>Email:</label>
+    <input type="text" name="email" class="form-control" placeholder="<%= result.dataValues.email %>">
+  </div> -->
+  <div class="form-group">
+    <label>Location (Currently at <%= result.dataValues.locale %>):</label>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD80T0Aor1mRyBzNVkpEnlYzUy7oqzsLkM&callback=geoFindMe"></script>
+    <div id="out"></div>
+    <!-- Add "you can edit this later balloon/tooltip" -->
+  </div>
+  <input type="submit" value="Modify" class="btn btn-primary update-user">
+</form>
+<!-- user {
+  dataValues:
+   { id: 3,
+     firstname: 'Joe',
+     lastname: 'Johnson',
+     username: 'Joe Johnson',
+     email: 'j...',
+     password: null,
+     facebookID: '...',
+     facebookToken: '...',
+     zipcode: null,
+     createdAt: 2018-01-08T20:55:39.079Z,
+     updatedAt: 2018-01-12T18:33:38.853Z } -->
+
+<h2>Delete Account</h2>
+ <a href="/auth/<%=currentUser.id%>" class="btn btn-danger" id="delete-user">
+   Permanately Remove User?
+ </a>
