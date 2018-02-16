@@ -37,8 +37,9 @@ $('#edit-session').submit(function (e) {
   });
 });
 
-$('#check-session').submit(function (e) {
-  console.log('check session',e );
-  e.preventDefault();
-
-});
+// $('#check-session').submit(function (e) {
+//   console.log('check session');
+//   e.preventDefault();
+//
+//
+// });
