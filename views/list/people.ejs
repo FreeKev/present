@@ -1,0 +1,27 @@
+<h2>Boss Roster, those present @ <%=currentUser.sessionid%></h2>
+  <style>
+    .dater { font-size: 12px; }
+    h2 { text-align: center; }
+  </style>
+<h1 class="text-center">Present</h1>
+<% if(results.length <= 0){ %>
+    <h2>No one here yet!</h2>
+<% } else { %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    <tbody>
+    <% results.forEach(function(foster){ %>
+        <tr>
+          <th scope="row"><%= user.firstname %></th>
+          <td><%= user.lastname %></td>
+          <td class="dater"><%= user.email %></td>
+        </tr>
+    <% }); %>
+    </tbody>
+  </table>
+<% } %>
