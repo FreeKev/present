@@ -1,38 +1,41 @@
-<<<<<<< HEAD
 
   <link rel="stylesheet" href="/css/prof.css">
-
-
-  <h1>
-    <%=  currentUser.firstname %>, at
-      <%=currentUser.locale%>
-  </h1>
-
   <div class="checkIn-page">
-    <div class="row">
-      
-    </div>
-    <div class="row">
-      <a class='present-btn' href="google.com" >
-        <div class="section-content col-sm-3">
-          <h2 class="page-title col-sm-12 text-center">PRESENT ?</h2>
-        </div>
-      </a>
-    </div>
+    <% if (currentUser.email === 'boss@boss.com' && currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
+    welcome <%= currentUser.firstname %>
+    Present at General Assembly! 
+    set your session id
         <div class="row">
-          <div class="section-content col-sm-12">
-          <h2 class="page-title col-sm-12 text-center">PRESENT ?</h2>
-          </div>
+          <form method="POST" action="#">
+            <div class="form-group">
+              <label>Set Session ID:</label>
+              <input type="text" name="sessionid" class="form-control" placeholder="Session ID">
+            </div>
+            <input type="submit" value="Check in" class="btn btn-success">
+          </form>
         </div>
-  </div>
-
-=======
-<h2>Present</h2>
-  <% if (currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
-    <h1><%= currentUser.firstname %> Present at General Assembly!</h1>
-  <% } else { %>
-    <h1><%=  currentUser.firstname %>, at <%=currentUser.locale%></h1>
+    
+    <% } else if (currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
+      <div class="row">
+        <h1>
+          <%= currentUser.firstname %> Present at General Assembly!</h1>
+      <div class="row">
+        <form method="POST" action="#">
+          <div class="form-group">
+            <label>Session ID:</label>
+            <input type="text" name="sessionid" class="form-control" placeholder="Session ID">
+          </div>
+          <input type="submit" value="Check in" class="btn btn-success">
+        </form>
+      
+      </div>
+        <% } else { %>
+          <h1>
+            <%=  currentUser.firstname %>, at
+              <%=currentUser.locale%>
+          </h1>
+              </div>
   <% } %>
->>>>>>> upstream/master
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
