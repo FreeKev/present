@@ -44,21 +44,14 @@ app.get('/profile', isLoggedIn, function(req, res){
   });
 });
 
-app.post('/profile', function(req, res, next){
-  db.user.findOrCreate({
-    where: {
-      sessionid: req.body.sessionid
-    }
-  }).spread(function(user, wasCreated){
-    if(wasCreated){
-      console.log('success');
-      console.log('this is user.sessionid',user.sessionid);
-      res.redirect('profile');
-    }
-  }).catch(function(err){
-    req.flash('error', err.message);
-    res.redirect('/auth/signup');
-  })
-});
+// app.post('/profile', function(req, res, next){
+//   console.log('something')
+//   db.user.update(
+//     {sessionid: req.body.sessionid},
+//     {where: {id: {[Op.lt]: 10}}}
+//   ).then(function(updated){
+//     console.log('updated', updated);
+//   });
+// });
 
 app.use('/auth', require('./controllers/auth'));
