@@ -1,11 +1,15 @@
 
   <link rel="stylesheet" href="/css/prof.css">
   <div class="checkIn-page">
+    <div class="row">
     <% if (currentUser.email === 'boss@boss.com' && currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
-    welcome <%= currentUser.firstname %>
-    Present at General Assembly! 
-    set your session id
+      welcome
+      <%= currentUser.firstname %>, you are Present at General Assembly!
+    </div>
+
+
         <div class="row">
+        set your session id !
           <form method="POST" action="#">
             <div class="form-group">
               <label>Set Session ID:</label>
