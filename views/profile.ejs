@@ -42,10 +42,18 @@
         <% } %>
 
     <% } else if (currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
-        <h1>
-          <%= currentUser.firstname %> Present at General Assembly!</h1>
       <div class="row">
-        <form id="check-session" action="/auth/check-session">
+        <div class="col-xs-offset-1 col-xs-10">
+          <h2>Check In</h2>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+        <h2><%= currentUser.firstname %>, you are currently at General Assembly!</h2>
+      </div>
+      </div>
+      <div class="row">
+        <form class='col-xs-offset-1 col-xs-10' id="check-session" action="/auth/check-session">
           <div class="form-group">
             <label>Session ID:</label>
             <input type="hidden" value="<%= currentUser %>">
@@ -55,38 +63,42 @@
         </form>
       </div>
         <% } else { %>
+          <div class="row">
           <h1>
             <%= currentUser.firstname %>, at
               <%=currentUser.locale%>
           </h1>
-              </div>
+          </div>
   <% } %>
-  </div>
-  <div class="row">
         <% if (currentUser.email != 'boss@boss.com' && currentUser.checkSession === null) { %>
-          <div>
-            <h2>are you here?</h2>
-            <h2>check in with your session id !</h2>
+          <div class="row">
+            <div>
+              <h2>are you here?</h2>
+              <h2>check in with your session id !</h2>
+            </div>
           </div>
     <% } else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession === currentUser.sessionid) { %>
-      <div class="col-sm-4">
-        <h2>Yay! Present @ General Assembly, current session!</h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <h2>Yay! youre here at General Assembly's Awesome Event!</h2>
+          </div>
+        </div>
+          <div class="row">
+            <div class="checkin-img">
+              <img src="img/check.png" alt="green check">
+            </div>
+          </div>
+    <% } 
+    else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession != currentUser.sessionid ){ %>
+      <div class="row">
+        <h3 class="col-xs-10 col-sm-10">youre here but wrong event :(</h3>
+      </div>
+      <div class="row">
         <div class="checkin-img">
-          <img src="img/check.png" alt="green check">
+          <img src="img/x.png" alt="green check">
         </div>
       </div>
-    <% }
-    else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession != currentUser.sessionid ){ %>
-      <div class="col-sm-6">
-        <h2>Glad you're here, but no.</h2>
-              <div class="checkin-img">
-                <img src="img/x.png" alt="green check">
-              </div>
-      </div>
-
   <% } %>
-
-
-  </div>
+    </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
