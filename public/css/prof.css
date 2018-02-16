@@ -1,64 +1,28 @@
-h2, h4 {
-  text-align: center;
-          /* text-shadow: 2px 2px #000000; */
-  color: white;
-  font-weight: bold;
-  z-index: 1;
-}
 
-a {
-  color: white;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing:
-  border-box;
-}
-
+/* --------------------------- */
 body {
-  text-align: center;
+    background: #F9D65A;
+  
 }
-
-form {
-  background: #000;
-  padding: 3px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  left: 0;
+.page {
+    padding: 0 !important; 
 }
-
-form input {
-  border: 0;
-  padding: 10px;
-  width: 90%;
-  margin-right: .5%;
+/* checkin-page */
+.checkIn-page {
+    background: #F9D65A;
+  
+    width: 100%;
+    height: 500px;
+    margin: 0 !important;
 }
-
-form button {
-  width: 9.5%;
-  height: 40px;
-  background: #31708f;
-  padding: 10px;
-  font-size: 2vw;
+.section-content {
+    background-color: rgba(0,255,0,.3);
+    height: 100%;
+    margin: 50px;
+    border: 3px solid rgba(0,255,0,.7);
+}
+.present-btn {
   color: white;
-  position: absolute;
+  text-decoration: none;
 }
-
-
-img {
-  height: auto;
-  left: 0;
-  margin: 0;
-  min-height: 100%;
-  min-width: 674px;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  opacity: 0.4;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-  z-index: -1;
-}
+/* animation for present-hand */
