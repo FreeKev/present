@@ -3,14 +3,12 @@
   <div class="checkIn-page">
     <div class="row">
     <% if (currentUser.email === 'boss@boss.com' && currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
-      welcome
-      <%= currentUser.firstname %>, you are Present at General Assembly!
-    </div>
-
-
+    welcome <%= currentUser.firstname %>
+    Present at General Assembly!
+    set your session id
         <div class="row">
         set your session id !
-          <form method="POST" action="#">
+          <form id="edit-session" action="/auth/edit-session">
             <div class="form-group">
               <label>Set Session ID:</label>
               <input type="text" name="sessionid" class="form-control" placeholder="Session ID">
@@ -18,7 +16,7 @@
             <input type="submit" value="Check in" class="btn btn-success">
           </form>
         </div>
-    
+
     <% } else if (currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
       <div class="row">
         <h1>
@@ -27,11 +25,11 @@
         <form method="POST" action="#">
           <div class="form-group">
             <label>Session ID:</label>
-            <input type="text" name="sessionid" class="form-control" placeholder="Session ID">
+            <input type="text" name="sessionidcheck" class="form-control" placeholder="Session ID">
           </div>
           <input type="submit" value="Check in" class="btn btn-success">
         </form>
-      
+
       </div>
         <% } else { %>
           <h1>
