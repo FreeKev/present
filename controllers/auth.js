@@ -136,4 +136,21 @@ router.put('/edit-session', isLoggedIn, function(req, res){
   });
 });
 
+router.put('/check-session', isLoggedIn, function (req, res) {
+  console.log('this is req.body', req.body);
+  db.user.update(
+    { checkSession: req.body.sessionidcheck },
+    { where: {
+      id: req.user.id
+    }
+  }).then(function (users) {
+      console.log('returned users?', users)
+      req.flash('success', 'Users Updated');
+      res.send('success'); //needs to tell ajax it is done
+    }).catch(function (err) {
+      console.log('Error occured', err);
+      res.send('fail');
+    });
+});
+
 module.exports = router;
