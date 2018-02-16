@@ -23,4 +23,12 @@ body {
   color: white;
   text-decoration: none;
 }
+.checkin-img {
+    width: 200px;
+    height: 175px;
+}
+.checkin-img img {
+    width: 100%;
+    height: 100%;
+}
 /* animation for present-hand */

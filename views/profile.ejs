@@ -1,6 +1,6 @@
 
   <link rel="stylesheet" href="/css/prof.css">
-  <div class="checkIn-page">
+  <div class="checkIn-page text-center">
     <div class="row">
     <% if (currentUser.email === 'boss@boss.com' && currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
     <h1>Welcome <%= currentUser.firstname %>, Present @ General Assembly!</h1>
@@ -41,14 +41,21 @@
             <h2>check in with your session id !</h2>
           </div>
     <% } else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession === currentUser.sessionid) { %>
-      <div class="checkin-img">
-        <img src="img/check.png" alt="green check">
+      <div class="col-sm-4">
+        <h2>Yay! youre here at General Assembly's Awesome Event!</h2>
+        <div class="checkin-img">
+          <img src="img/check.png" alt="green check">
+        </div>
       </div>
-    <% }
+    <% } 
     else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession != currentUser.sessionid ){ %>
-      <div class="checkin-img">
-        <img src="img/x.png" alt="green check">
+      <div class="col-sm-6">
+        <h2>youre here but wrong event :(</h2>
+              <div class="checkin-img">
+                <img src="img/x.png" alt="green check">
+              </div>
       </div>
+
   <% } %>
 
 
