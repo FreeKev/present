@@ -1,6 +1,27 @@
 body {
   font-family: 'Source Serif Pro', serif;
+  background-color: #4A4A4A;
 }
+
+body p, h1, h2, h3, h4, a {
+  color: white;
+}
+
+body label {
+  color: white;
+}
+
+.navimg {
+  background-image: url("http://static-assets.generalassemb.ly/logos/generalassembly-open-graph.png");
+  width: 400px;
+  height: 50px;
+  z-index: 5;
+}
+
+button {
+  align-items: center;
+}
+
 .hand-wave {
   width: 100px;
   height: 100px;
@@ -30,7 +51,7 @@ transform-origin: 50% 100%;
 -webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
 animation-timing-function: ease;
 }
-/* Chrome, Safari, Opera */ 
+/* Chrome, Safari, Opera */
 @-webkit-keyframes wink {
     0% {-webkit-transform: rotate(-40deg);
 -moz-transform: rotate(-40deg);
@@ -43,9 +64,9 @@ animation-timing-function: ease;
 -o-transform: rotate(40deg);
 -ms-transform: rotate(40deg);
 transform: rotate(40deg);}
-} 
+}
 
-/* Standard syntax */ 
+/* Standard syntax */
 @keyframes wink {
     0% {-webkit-transform: rotate(-40deg);
 -moz-transform: rotate(-40deg);

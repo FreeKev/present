@@ -1,16 +1,14 @@
 
 /* --------------------------- */
 body {
-    background: #F9D65A;
-  
+
 }
 .page {
-    padding: 0 !important; 
+    padding: 0 !important;
 }
 /* checkin-page */
 .checkIn-page {
-    background: #F9D65A;
-  
+
     width: 100%;
     height: 500px;
     margin: 0 !important;
