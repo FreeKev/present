@@ -55,3 +55,4 @@ app.get('/profile', isLoggedIn, function(req, res){
 // });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/list', require('./controllers/list'));

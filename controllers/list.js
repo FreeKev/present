@@ -5,15 +5,16 @@ var router = express.Router();
 
 router.use(express.static(__dirname + '../public/'));
 
-router.get('/list/:sessionid', function(req, res){
+router.get('/list', function(req, res){
   db.user.findAll({
     where: {
-      sessionid: req.params.sessionid
+      checkSession: req.params.checkSession
     }
   }).then(function(message){
       res.render('../views/roster/list', {results: people});
       console.log(results);
   });
+  console.log('list route')
 });
 
 module.exports = router;
