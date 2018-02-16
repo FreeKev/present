@@ -19,10 +19,10 @@
         <h1>
           <%= currentUser.firstname %> Present at General Assembly!</h1>
       <div class="row">
-        <form id="check-session" action="#">
+        <form id="check-session" action="/auth/check-session">
           <div class="form-group">
             <label>Session ID:</label>
-            <input type="hidden" value="<%= currentUser.sessionid %>">
+            <input type="hidden" value="<%= currentUser %>">
             <input type="text" name="sessionidcheck" class="form-control" placeholder="Session ID">
           </div>
           <input type="submit" value="Check in" class="btn btn-success">
@@ -35,6 +35,25 @@
           </h1>
               </div>
   <% } %>
+  </div>
+  <div class="row">
+        <% if (currentUser.email != 'boss@boss.com' && currentUser.checkSession === null) { %>
+          <div>
+            <h2>are you here?</h2>
+            <h2>check in with your session id !</h2>
+          </div>
+    <% } else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession === currentUser.sessionid) { %>
+      <div class="checkin-img">
+        <img src="img/check.png" alt="green check">
+      </div>
+    <% } 
+    else if (currentUser.email != 'boss@boss.com' && currentUser.checkSession != currentUser.sessionid ){ %>
+      <div class="checkin-img">
+        <img src="img/x.png" alt="green check">
+      </div>
+  <% } %>
+      
+        
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

@@ -29,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     facebookID: DataTypes.STRING,
     facebookToken: DataTypes.STRING,
     locale: DataTypes.STRING,
-    sessionid: DataTypes.STRING
+    sessionid: DataTypes.STRING,
+    checkSession: DataTypes.STRING
   }, {
     hooks: {
       beforeCreate: function(pendingUser, options){
