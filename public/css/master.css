@@ -15,6 +15,12 @@ body label {
   color: white;
 }
 
+#tablz tr {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .navimg {
   background-image: url("http://static-assets.generalassemb.ly/logos/generalassembly-open-graph.png");
   width: 400px;
