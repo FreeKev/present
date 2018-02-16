@@ -13,7 +13,7 @@
               <label>Set Session ID:</label>
               <input type="text" name="sessionid" class="form-control" placeholder="Session ID">
             </div>
-            <input type="submit" value="Check in" class="btn btn-success">
+            <input type="submit" value="Set Session ID" class="btn btn-success">
           </form>
         </div>
 
@@ -22,18 +22,18 @@
         <h1>
           <%= currentUser.firstname %> Present at General Assembly!</h1>
       <div class="row">
-        <form method="POST" action="#">
+        <form id="check-session" action="#">
           <div class="form-group">
             <label>Session ID:</label>
+            <input type="hidden" value="<%= currentUser.sessionid %>">
             <input type="text" name="sessionidcheck" class="form-control" placeholder="Session ID">
           </div>
           <input type="submit" value="Check in" class="btn btn-success">
         </form>
-
       </div>
         <% } else { %>
           <h1>
-            <%=  currentUser.firstname %>, at
+            <%= currentUser.firstname %>, at
               <%=currentUser.locale%>
           </h1>
               </div>

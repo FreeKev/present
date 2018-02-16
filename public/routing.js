@@ -22,7 +22,6 @@ $('#edit-form').submit(function(e){
   });
 });
 
-
 $('#edit-session').submit(function (e) {
   console.log('edit session');
   e.preventDefault();
@@ -31,9 +30,15 @@ $('#edit-session').submit(function (e) {
     method: 'PUT',
     data: $(this).serialize()
   }).success(function (data) {
-    console.log('data',data)
+    console.log('success data',data)
     window.location.href = '/profile';
   }).fail(function (err) {
     console.log(err);
   });
+});
+
+$('#check-session').submit(function (e) {
+  console.log('check session',e );
+  e.preventDefault();
+
 });

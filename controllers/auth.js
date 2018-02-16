@@ -100,7 +100,7 @@ router.delete('/:id', isLoggedIn, function(req, res){
 
 router.put('/edit', isLoggedIn, function(req, res){
   console.log('Update Route. Id = ', req.user.id);
-  console.log(req.body);
+  console.log('thisis req',req.body);
   db.user.update({
       username: req.body.username,
       firstname: req.body.firstname,
@@ -124,10 +124,12 @@ router.put('/edit-session', isLoggedIn, function(req, res){
   db.user.update( 
     { sessionid: req.body.sessionid }, 
     { where: { 
-      id: [1,2,3,4]
+      sessionid: 'dog'
     } 
   }).then(function(users){
     console.log('returned users?',users)
+    req.flash('success', 'Users Updated');
+    res.send('success'); //needs to tell ajax it is done
   }).catch(function (err) {
     console.log('Error occured', err);
     res.send('fail');
