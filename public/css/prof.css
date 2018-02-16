@@ -1,64 +1,46 @@
-h2, h4 {
-  text-align: center;
-          /* text-shadow: 2px 2px #000000; */
-  color: white;
-  font-weight: bold;
-  z-index: 1;
-}
 
-a {
-  color: white;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing:
-  border-box;
-}
-
+/* --------------------------- */
 body {
-  background-color: black;
+    /* width: 100%; */
+
+    margin: 10 !important;  
+    padding: 10 !important;  
+
+}
+.container{
+    width: 100%;
+    margin: 0 !important;
+}
+.page {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    
+    padding: 0 !important;
+    width: 100%;    
+    height: 100%;
+    
+}
+nav {
+    /* margin: 0 !important; */
+    /* background-color: rgba(255,255,0,.7);     */
+    background-color:transparent !important;
+
 }
 
-form {
-  background: #000;
-  padding: 3px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  left: 0;
+/* checkin-page */
+.checkIn-page {
+    width: 100%;
+    height: 800px;
+    margin: 0 !important;
 }
-
-form input {
-  border: 0;
-  padding: 10px;
-  width: 90%;
-  margin-right: .5%;
+.page-title {
+    /* padding: 0 !important;     */
 }
+.section-content {
+    background-color: rgba(0,255,0,.3);
+    margin-left: 100px;
 
-form button {
-  width: 9.5%;
-  height: 40px;
-  background: #31708f;
-  padding: 10px;
-  font-size: 2vw;
-  color: white;
-  position: absolute;
-}
+    height: 1200px;
+    border: 3px solid rgba(0,260,0,.7);
 
-
-img {
-  height: auto;
-  left: 0;
-  margin: 0;
-  min-height: 100%;
-  min-width: 674px;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  opacity: 0.4;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-  z-index: -1;
 }
