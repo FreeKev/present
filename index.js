@@ -38,9 +38,12 @@ app.get('/', function(req, res){
 });
 
 app.get('/profile', isLoggedIn, function(req, res){
-  res.render('profile');
+  // res.render('profile');
   db.user.findAll().then(printU => {
-    console.log('locale',printU.locale);
+    // console.log('locale',printU.locale);
+    console.log(printU);
+    // console.log(printU[0].dataValues.id);
+    res.render('profile', {people: printU});
   });
 });
 
@@ -55,4 +58,3 @@ app.get('/profile', isLoggedIn, function(req, res){
 // });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/list', require('./controllers/list'));

@@ -13,6 +13,34 @@
           </form>
         </div>
 
+        <h2>Boss Roster, those present @ <%=currentUser.sessionid%></h2>
+          <style>
+            .dater { font-size: 12px; }
+            h2 { text-align: center; }
+          </style>
+        <h1 class="text-center">Present</h1>
+        <% if(people.length <= 0){ %>
+            <h2>No one here yet!</h2>
+        <% } else { %>
+          <table id="tablz" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Session ID Check</th>
+              </tr>
+            <tbody>
+            <% people.forEach(function(roster){ %>
+                <tr>
+                  <th scope="row"><%= roster.firstname %></th>
+                  <td><%= roster.lastname %></td>
+                  <td class="dater"><%= roster.checkSession %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+          </table>
+        <% } %>
+
     <% } else if (currentUser.locale === '324 University St, Seattle, WA 98101, USA') { %>
       <div class="row">
         <div class="col-xs-offset-1 col-xs-10">

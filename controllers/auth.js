@@ -81,14 +81,6 @@ router.get('/:id', function(req, res){
     // console.log(user);
     res.render('auth/single', { result: user });
   });
-  db.user.findAll({
-    where: {
-      checkSession: user.sessionid
-    }
-  }).then(function(roster){
-      // res.render('../views/roster/list', {results: people});
-      console.log(roster);
-  });
 });
 
 router.delete('/:id', isLoggedIn, function(req, res){
